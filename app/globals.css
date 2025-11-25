@@ -111,8 +111,7 @@ body {
   width: 705px;
   height: 764px;
   flex-shrink: 0;
-  overflow-y: auto;
-  /* Ensure content fits within card */
+  overflow: visible;
   display: flex;
   flex-direction: column;
 }
@@ -138,7 +137,7 @@ body {
 
 .card-title .title-accent {
   color: #3F51B5;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .header-row {
@@ -303,5 +302,52 @@ body {
     max-width: 100%;
     width: 100%;
   }
+}
+
+/* Make the red circle stay attached to the right card and overlap the crown */
+.red-circle-attached {
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  width: 150px;
+  height: 150px;
+  background: #FF4E4E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  aspect-ratio: 1;
+}
+
+/* Crown inside the circle, overlapped */
+.red-circle-attached svg {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 120px;
+  height: 100px;
+  z-index: 6;
+}
+
+/* Rank text beside the circle */
+.rank-text-on-circle {
+  position: absolute;
+  top: 50px;
+  left: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 6;
+  text-align: left;
+}
+
+.rank-text-on-circle .rank-number-large {
+  font-size: 28px;
+}
+
+.rank-text-on-circle .student-name-large {
+  font-size: 20px;
 }
 

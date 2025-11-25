@@ -1,7 +1,6 @@
 import CrownIcon from './components/CrownIcon'
 
 export default function Home() {
-  // Sample data - 13 entries as shown in the design
   const topUsers12th = Array.from({ length: 13 }, (_, i) => ({
     rank: i + 1,
     name: 'Student A',
@@ -26,26 +25,15 @@ export default function Home() {
         <div className="plain-circle"></div>
       </div>
 
-      {/* Red circle decoration with crown - positioned on background */}
-      <div className="top-card-decoration">
-        <CrownIcon />
-      </div>
-
-      {/* Rank display beside red circle */}
-      <div className="rank-display-beside-circle">
-        <div className="rank-number-large">Rank #1</div>
-        <div className="student-name-large">Student Name</div>
-      </div>
-
-      {/* Cards container */}
       <div className="cards-container">
-        {/* Left Card: TOP USERS IN 12th AND CBSE */}
+
+        {/* LEFT CARD */}
         <div className="leaderboard-card left-card">
           <div className="card-title">
             <span className="title-main">TOP USERS IN </span>
             <span className="title-accent">12th AND CBSE</span>
           </div>
-          
+
           <div className="header-row">
             <div>User</div>
             <div>Loomies</div>
@@ -58,11 +46,7 @@ export default function Home() {
                 <div className="list-item-content">
                   <span className="rank-number">{user.rank}.</span>
                   <div className="red-square-icon">
-                    <img 
-                      src="/images/hakla.webp" 
-                      alt="User avatar" 
-                      className="avatar-image"
-                    />
+                    <img src="/images/hakla.webp" alt="avatar" className="avatar-image" />
                   </div>
                   <span className="student-name">{user.name}</span>
                 </div>
@@ -73,19 +57,25 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Card: TOP USERS EVER */}
+        {/* RIGHT CARD */}
         <div className="leaderboard-card right-card">
-          {/* Rank display */}
-          <div className="rank-display">
+
+          {/* ⭐ Red circle attached to card */}
+          <div className="red-circle-attached">
+            <CrownIcon />
+          </div>
+
+          {/* ⭐ Rank text attached to circle */}
+          <div className="rank-text-on-circle">
             <div className="rank-number-large">Rank #1</div>
             <div className="student-name-large">Student Name</div>
           </div>
 
-          <div className="card-title" style={{ marginTop: '130px' }}>
+          <div className="card-title" style={{ marginTop: "160px" }}>
             <span className="title-main">TOP USERS </span>
             <span className="title-accent">EVER</span>
           </div>
-          
+
           <div className="header-row five-columns">
             <div>User</div>
             <div>Grade</div>
@@ -96,15 +86,11 @@ export default function Home() {
 
           <div className="list-container">
             {topUsersEver.map((user, index) => (
-              <div key={index} className={`list-item five-columns ${index === 1 ? 'highlighted' : ''}`}>
+              <div key={index} className={`list-item five-columns ${index === 1 ? "highlighted" : ""}`}>
                 <div className="list-item-content">
                   <span className="rank-number">{user.rank}.</span>
                   <div className="red-square-icon">
-                    <img 
-                      src="/images/hakla.webp" 
-                      alt="User avatar" 
-                      className="avatar-image"
-                    />
+                    <img src="/images/hakla.webp" alt="avatar" className="avatar-image" />
                   </div>
                   <span className="student-name">{user.name}</span>
                 </div>
@@ -115,9 +101,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </main>
-  )
+  );
 }
-

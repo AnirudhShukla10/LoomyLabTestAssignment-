@@ -8,8 +8,8 @@ export default function CrownIcon() {
         width: '150px',
         height: '120px',
         position: 'absolute',
-        top: '-35px',
-        left: '-60px',
+        top: '-60px',
+        left: '-55px',
       }}
     >
       <polygon
